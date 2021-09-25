@@ -26,7 +26,7 @@ function compare(choice1, choice2) {
             return "User";
         }
     } else if (choice1 === "scissors") { //if Scissor - cut paper (win), lose to rock
-        if (choise2 === "paper") {
+        if (choice2 === "paper") {
             userScore++;
             return "User";
         } else if (choice2 === "rock") {
@@ -39,5 +39,21 @@ function compare(choice1, choice2) {
 //to start game:
 function startGame(e) {
     let userChoice = e;
-    let computerChoices = ["rock", "paper", "scissors"];
+    let computerChoices = ["rock", "paper", "scissors"]; //pc will make its choice
+    let computerChoice = computerChoices[Math.floor(Math.random() * 3)];
+
+    let winner = compare(userChoice, computerChoice);
+    whoWins.classList = "";
+
+    if (winner == "User") {
+        whoWins.innerHTML = winner + " wins";
+        whoWins.classList.add("win");
+    } else if (winner == "Computer") {
+        whoWins.innerHTML = winner + " wins";
+        whoWins.classList.add("lose");
+    } else {
+        whoWins.innerHTML = winner;
+        whoWins.classList.add("tie");
+    }
+    score.innerHTML = `<span class="sides">User: ${userScore}</span><span class="sides">Computer: ${computerScore}</span>`;
 }
