@@ -15,22 +15,34 @@ body {
     background: #D4B483;
 }
 
+h1, h2 {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
 /* Class */
+
 .container {
     background: white;
     padding: 32px;
-    max-width: 425px; /* change later */
+    max-width: 650px; /* change later */
     width: 100%;
     border-radius: 8px;
     transition: 0.2s;
 }
 
-.container h2 {
-    margin-bottom: 32px;
-    text-align: center;
+.rulebox {
+    display: flex;
+    align-self: auto;
 }
 
-.gamecontainer { /* need changes */
+.rules {
+    display: grid; /* for the elements inside*/
+    background: whitesmoke;
+    padding: 32px;
+}
+
+.gamecontainer { 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
